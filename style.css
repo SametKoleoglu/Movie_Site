@@ -1,0 +1,399 @@
+/*! Base Css Start */
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+
+*{
+    margin: 0;
+}
+
+/*! Base Css End */
+
+body{
+    font-family: 'Young Serif', serif;
+    
+}
+
+
+.container{
+    background-color: #000;
+    color: #fff;
+    height: 205vh;
+}
+
+/* Navbar Start */
+
+.navbar{
+    background-color: #000;
+    height: 50px;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.navbar-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 50px;
+}
+
+.logo{
+    font-size: 35px;
+    /* color: rgb(5, 106, 165); */
+    color: goldenrod;
+}
+
+.menu-list{
+    display: flex;
+    list-style: none;
+    column-gap: 35px;
+    padding: 0;
+}
+
+.menu-list-element{
+    cursor: pointer;
+}
+
+.menu-list-element.active{
+    font-weight: bold;
+}
+
+.menu-list-element:hover{
+    font-weight: bold;
+}
+
+.profile-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 20px;
+}
+
+.profile-picture{
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-text-container{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    line-height: 2;
+}
+
+.toggle{
+    width: 42px;
+    background-color: #fff;
+    height: 21px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+
+.toggle-icon{
+    color: gold;
+}
+
+.toggle-bar{
+    width: 17px;
+    height: 17px;
+    background-color: #000;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    right: 1px;
+    transition: .5s all ease;
+}
+
+/* Navbar End */
+
+
+/* Sidebar Start */
+
+.sidebar{
+    background-color: #000;
+    color: #fff;
+    height: 100%;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 55px;
+    row-gap: 40px;
+    align-items: center;
+    position: fixed;
+    top: 0;
+}
+
+.sidebar i{
+    color: #fff;
+    font-size: x-large;
+    cursor: pointer;
+}
+
+.sidebar i:hover{
+    color: rgb(5, 106, 165);
+}
+
+/* Sidebar End */
+
+
+/* Featured Start */
+
+.content-wrapper{
+    margin-left: 50px;
+    
+}
+
+.featured-content{
+    background: url("images/Casa-de-Papel-img.jpg");
+    padding: 50px;
+    height: calc(100vh - 150px);
+    background-size: 100% 100%;
+}
+
+.featured-title{
+    width: 400px;
+}
+
+.featured-desc{
+    background-color: transparent;
+    color: #fff;
+    width: 500px;
+    opacity: 0.9;
+    padding: 10px;
+    border: 5px solid rgb(5, 106, 165);
+    border-radius: 40px;
+    margin: 30px 0;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: larger;
+}
+
+.featured-buttons{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.featured-buttons button{
+    padding: 10px 25px;
+    border-radius: 2px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    column-gap: 10px;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.featured-buttons button:hover{
+    background-color: rgb(5, 106, 165);
+    color: #fff;
+}
+
+/* Featured End */
+
+
+/* Filter Start */
+
+.movie-list-filter{
+    margin: 20px 0 20px 70px;
+    padding: 25px;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.movie-list-filter select {
+    background-color: #000;
+    color: #fff;
+    padding: 7px 0;
+    width: 125px;
+    width: 10%;
+    height: 40%;
+    font-size: x-large;
+
+}
+
+.movie-list-filter select:hover {
+    border: solid 3px rgb(5, 106, 165);
+    color: rgb(5, 106, 165);
+}
+
+/* Filter End */
+
+
+/* Movie List Start */
+
+.movie-list-container{
+    margin-left: 70px;
+    margin-bottom: 80px;
+}
+
+.movie-list{
+    list-style: none;
+    padding: 0;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+    transform: translateX(0);
+    transition: 1s all ease-in-out;
+}
+
+.movie-list-wrapper{
+    overflow: hidden;
+    position: relative;
+}
+
+.movie-item{
+    position: relative;
+}
+
+.movie-item:hover .movie-title,
+.movie-item:hover .movie-buttons
+{
+    opacity: 1;
+}
+
+.movie-item:hover .movie-img{
+    transform: scale(1.2);
+    margin: 0 30px;
+    opacity: .5;
+    cursor: pointer;
+}
+
+.movie-img{
+    width: 300px;
+    height: 300px;
+    object-fit: fill;
+    transition: 1s all ease-in-out;
+}
+
+.movie-title{
+    background-color: rgba(40, 40, 40, 0.4);
+    padding: 0 10px;
+    font-size: x-large;
+    font-weight: bold;
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.movie-buttons{
+    background-color: rgba(40, 40, 40, 0.4);
+    padding: 10px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 6%;
+    left: 20%;
+    column-gap: 20px;
+    display: flex;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+
+}
+
+.movie-buttons i{
+    cursor: pointer;
+    opacity: .5;
+    font-size: 20px;
+    transition: 0.5s all ease;
+
+}
+
+.movie-buttons i:hover{
+    opacity: 1;
+}
+
+.arrow{
+    width: 100px;
+    display: flex;
+    font-size: 120px;
+    position: absolute;
+    right: 0;
+    top: 100px;
+    opacity: .5;
+    transition: .5s ease all;
+    cursor: pointer;
+}
+
+.arrow:hover{
+    opacity: 1;
+}
+
+/* Movie List End */
+
+
+/* Dark Mode */
+.container.active{
+    background-color: #fff;
+
+}
+
+.navbar.active{
+    background-color: #fff;
+    color: #000;
+}
+
+.sidebar.active{
+    background-color: #fff;
+}
+
+.sidebar i.active{
+    color: #000;
+}
+
+.toggle.active{
+    background-color: #000;
+}
+
+.toggle-bar.active{
+    background-color: #fff;
+    transform: translateX(-20px);
+}
+
+.movie-list-filter select.active{
+    background-color: #fff;
+    color: #000;
+}
+
+.movie-list-container.active{
+    color: #000;
+}
+
+
+/* Response Start */
+
+@media only screen and (max-width: 800){
+    .menu-container{
+        display: none;
+    }
+
+    .featured-title{
+        width: 150px;
+    }
+
+    .featured-content{
+        height: 45vh;
+    }
+
+    .featured-desc{
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        max-width: 200px;
+        padding: 0;
+    }
+}
